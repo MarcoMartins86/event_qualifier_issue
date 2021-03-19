@@ -39,6 +39,6 @@ public abstract class AbstractObserverImportantEvent {
 
 We can see that the `AbstractObserverNormalEvent.observer()` shouldn't be triggered for the event with the `@org.acme.ImportantEvent()` qualifier, nevertheless, it is and this is the issue in question.
 
-Debugging the problem I can see that the observer method in the `AbstractObserverNormalEvent.observer()` does not inherit the `@org.acme.NormalEvent()` qualifier.
+Debugging the problem I can see that the observer method in the `AbstractObserverNormalEvent.observer()` does not have the `@org.acme.NormalEvent()` qualifier and so it behaves like a general observer.
 
 ![debug_info](debug_info.png "debug_info")
